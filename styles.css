@@ -26,7 +26,7 @@ h2{
     text-align: center;
 }
 p{
-    font-family: Franklin;
+    font-family: "Franklin", sans-serif;
     font-weight: 100;
     color: #575755;
     margin:16px;
@@ -46,7 +46,7 @@ p{
     border-radius: 12px;
 
     width: 100%;
-    aspect-ratio: 144 / 84;
+    aspect-ratio:  144 /84;
 
     text-transform: uppercase;
     font-weight: 700;
@@ -73,19 +73,41 @@ p{
 .buttons-container{
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 12px;
+    flex-wrap: nowrap;
+    gap: clamp(4px, 2vw, 12px);
+    width: 100%;
+    max-width: 600px;
+    margin: 12px auto;
 }
 .game-btn{
     color: black;
     background: none;
-    padding: 16px;
+    padding: 12px clamp(5px, 2vw, 16px);
     border: 1px solid rgb(0, 0, 0);
     border-radius: 100px;
-    font-size: small;
+    font-size: clamp(10px, 3vw, 14px);
     font-weight: 600;
     transition: all 1s;
+
+    white-space: nowrap;
+    -webkit-appearance: none;
+    appearance: none;
+    -webkit-tap-highlight-color: transparent;
+}
+.game-btn:focus {
+    outline: none;
+    background: white;
+    color: black;
+}
+
+.game-btn:focus-visible {
+    outline: 2px solid #5A594E;
+    outline-offset: 3px;
+}
+
+.game-btn:active {
+    background: #e0e0da;
+    color: black;
 }
 .game-btn:hover{
     background-color: #b9b4b41a;
@@ -179,14 +201,14 @@ body{
     background-color: #AF86BF;
 }
 .group-label{
-    font-family: Franklin;
+    font-family: "Franklin", sans-serif;
     font-size: clamp(14px, 4vw, 20px);
     font-weight: 700;
     text-transform: uppercase;
     color: black;
 }
 .group-words-list{
-    font-family: Franklin;
+    font-family: "Franklin", sans-serif;
     text-transform: uppercase;
     font-size: clamp(12px, 4vw, 22px);
     font-weight: 500;
@@ -194,4 +216,9 @@ body{
     margin: 0;
     color: #515045;
     text-align: center;
+}
+@media (max-width: 480px) {
+    .card {
+        aspect-ratio: 1 / 1;
+    }
 }
