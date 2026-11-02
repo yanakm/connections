@@ -26,7 +26,7 @@ h2{
     text-align: center;
 }
 p{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Franklin;
     font-weight: 100;
     color: #575755;
     margin:16px;
@@ -78,6 +78,7 @@ p{
     margin: 12px;
 }
 .game-btn{
+    color: black;
     background: none;
     padding: 16px;
     border: 1px solid rgb(0, 0, 0);
@@ -161,7 +162,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 6px;
+    gap: clamp(4px, 2vw, 8px);
     margin: 4px 0;
     text-align: center;
 }
@@ -178,14 +179,14 @@ body{
     background-color: #AF86BF;
 }
 .group-label{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Franklin;
     font-size: clamp(14px, 4vw, 20px);
     font-weight: 700;
     text-transform: uppercase;
     color: black;
 }
 .group-words-list{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Franklin;
     text-transform: uppercase;
     font-size: clamp(12px, 4vw, 22px);
     font-weight: 500;
