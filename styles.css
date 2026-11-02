@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Franklin", sans-serif !important;
 }
 @font-face {
     font-family: "Franklin";
@@ -48,7 +49,7 @@ p{
     width: 100%;
     aspect-ratio:  144 /84;
 
-    font-family: "Franklin", sans-serif;
+    font-family: "Franklin", sans-serif !important;
     text-transform: uppercase;
     font-weight: 700;
     font-size: clamp(10px, 3vw, 18px);
