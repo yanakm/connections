@@ -1,0 +1,174 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+  --grid-width: 600px;
+  --grid-height: 360px;
+  --cell-height: 90px;
+}
+h1{
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+h2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
+    color: #575755;
+}
+p{
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    color: #575755;
+    margin:16px;
+}
+#game-grid{
+    width: var(--grid-width);
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-row-gap: 8px;
+    grid-column-gap: 4px;
+    margin: 8px;
+}
+.card{
+    background-color: #EFEFE6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 18px;
+    position: relative;
+    width: 144px;
+    height: 84px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+
+}
+.card:hover{
+    background-color: #e0e0da;
+    cursor: pointer;
+}
+.card.selected{
+    background-color: #5A594E;
+    color: white;
+}
+.card.selected:hover{
+    background-color: #515045;
+    cursor: pointer;
+}
+.buttons-container{
+    margin: 16px;
+}
+.game-btn{
+    background: none;
+    padding: 16px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 100px;
+    font-size: small;
+    font-weight: 600;
+    transition: all 1s;
+}
+.game-btn:hover{
+    background-color: #b9b4b41a;
+    cursor: pointer;
+}
+.game-btn:disabled{
+    border: 1px solid rgb(192, 190, 190);;
+    color:rgb(192, 190, 190);
+}
+.game-btn:disabled:hover{
+    cursor:default;
+    background: none;
+}
+.game-btn:focus{
+    background-color: black;
+    color: white;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 24px;
+}
+
+.card.error {
+    animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+.card.success{
+    animation: jump 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+.card.success.n1{
+    animation-delay: 200ms;
+}
+.card.success.n2{
+    animation-delay: 400ms;
+}
+.card.success.n3{
+    animation-delay: 600ms;
+}
+.card.success.n4{
+    animation-delay: 800ms;
+}
+
+@keyframes shake {
+   0% { transform: translateX(0) }
+ 20% { transform: translateX(5px) }
+ 40% { transform: translateX(-5px) }
+ 60% { transform: translateX(5px) }
+ 80% { transform: translateX(-5px) }
+ 100% { transform: translateX(0) }
+}
+
+@keyframes jump {
+    0% { transform: translateX(0) }
+    50% { transform: translateY(-8px) }
+    90% { transform: translateY(-2px) }
+    100% { transform: translateX(0) }   
+}
+
+.group-card{
+    width: var(--grid-width);
+    height: var(--cell-height);
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    margin: 4px;
+}
+.group-card.yellow{
+    background-color: #F2DF7F;
+}
+.group-card.green{
+    background-color: #A8BF6A;
+}
+.group-card.blue{
+    background-color: #B6C5EB;
+}
+.group-card.purple{
+    background-color: #AF86BF;
+}
+.group-label{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: black;
+}
+.group-words-list{
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight:500;
+    padding: 0;
+    margin: 0;
+    color: #515045;
+}
