@@ -73,7 +73,7 @@ function populateGrid(){
 
         div.addEventListener('click',handleCardClick)
 
-        grid.append(div);
+        grid.appendChild(div);
     }
 }
 //-----------------------------------------------
