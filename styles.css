@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 :root {
-  --grid-width: 600px;
+  --grid-width: min(600px, calc(100vw - 32px));
   --grid-height: 360px;
   --cell-height: 90px;
 }
@@ -27,8 +27,8 @@ p{
     width: var(--grid-width);
     height: auto;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(30px, 1fr));
+    grid-template-rows: repeat(4, minmax(30px, 1fr));
     grid-row-gap: 8px;
     grid-column-gap: 4px;
     margin: 8px;
