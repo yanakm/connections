@@ -20,9 +20,11 @@ h1{
     font-size: clamp(26px, 6vw, 40px);
     font-family: "Franklin", sans-serif;
     text-align: center;
+    text-transform: uppercase;
 }
 h2{
     font-family: "Franklin", sans-serif;
+    font-size: clamp(20px, 4vw, 24px);
     font-weight: 400;
     color: #575755;
     text-align: center;
@@ -217,7 +219,7 @@ body{
     font-weight: 500;
     padding: 0;
     margin: 0;
-    color: #515045;
+    color: #1c1b17;
     text-align: center;
 }
 @media (max-width: 480px) {
