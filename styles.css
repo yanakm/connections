@@ -3,6 +3,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+@font-face {
+    font-family: "Franklin";
+    src: url("./fonts/franklin-gothic.woff2") format("woff2");
+    font-weight: 400 700;
+    font-display: swap;
+}
 :root {
   --grid-width: min(600px, calc(100vw - 32px));
   --grid-height: 360px;
@@ -10,15 +16,15 @@
 }
 h1{
     font-size: 40px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: Franklin;
 }
 h2{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: Franklin;
     font-weight: 400;
     color: #575755;
 }
 p{
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 100;
     color: #575755;
     margin:16px;
