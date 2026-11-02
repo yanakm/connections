@@ -48,6 +48,7 @@ p{
     width: 100%;
     aspect-ratio:  144 /84;
 
+    font-family: "Franklin", sans-serif;
     text-transform: uppercase;
     font-weight: 700;
     font-size: clamp(10px, 3vw, 18px);
@@ -220,5 +221,6 @@ body{
 @media (max-width: 480px) {
     .card {
         aspect-ratio: 1 / 1;
+        font-weight: 800;
     }
 }
