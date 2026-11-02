@@ -10,6 +10,8 @@ submitBtn.addEventListener('click',submit);
 var selected = []; //Keeps objects of the currently selected words
 var randWords = []; //Keeps an array of all the words in a random order
 var rowCount = 4;
+var mistakes = 0;
+var successes = 0;
 //-------------------------------------------------------
 //Helper functions: shuffleArray
 function shuffleArray(array) {
@@ -22,18 +24,30 @@ function shuffleArray(array) {
 }
 //-------------------------------------------------------
 // The words in groups of four
-const groups = [
+const groups2 = [
     ["събиране", "среща", "контакт", "рандеву"],
     ["мая", "шляя", "рея", "бродя"],
     ["брашно", "бира", "боза", "слама"],
     ["яйце", "деление", "семена", "спори"]
 ];
+const groups = [
+    ["врата", "отвор", "портал", "люк"],
+    ["локи", "один", "тир", "тор"],
+    ["крило", "двигател", "оперение", "колело"],
+    ["пипер", "прах", "полен", "перо"]
+];
 // The categories
-const categories =[
+const categories2 =[
     "Сбирка",
     "Блуждая",
     "Продукти от зърнени култури", 
     "Начини за размножадване на организми" 
+]
+const categories =[
+    "Порта",
+    "Скандинавски богове",
+    "Части на самолет", 
+    "Предизвикват кихане" 
 ]
 const colors =[
     "yellow",
@@ -92,6 +106,7 @@ function handleButtonDisable(){
 //Handle the click of a game card
 //-------------------------------
 function handleCardClick(e){
+    if(mistakes>=4) return;
     const index = e.target.dataset.index;
     const groupId = e.target.dataset.groupId; 
     if(e.target.classList.contains("selected")){
@@ -197,7 +212,12 @@ function rearangeUpperRow(){
 }
 
 function submit(){
+    if(mistakes>=4) return;
     if(correctSelection()) {
+        successes++;
+        if(successes==4){
+            alert("Браво! 🎉")
+        }
         successDance();
         const groupId = selected[0].group;
         var time = 1000;
@@ -230,7 +250,7 @@ function submit(){
         label.innerHTML = categories[groupId];
         div.appendChild(label);
 
-        const wordsList = document.createElement('p');
+        const wordsList = document.createElement('div');
         wordsList.classList.add("group-words-list");
 
         wordsList.innerHTML = groups[groupId][0]+", "
@@ -261,6 +281,15 @@ function submit(){
                 element.classList.remove('error');
             },1000);
         });
+        mistakes++;
+        if(mistakes<=4){
+            const dot = document.getElementById("md"+ mistakes);
+            dot.classList.add("empty");
+        }
+        if(mistakes>=4){
+            alert("Загубеняк! 🫵🏼🤣");
+            handleDeselect();
+        }
     }
 }
 

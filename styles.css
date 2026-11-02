@@ -29,11 +29,13 @@ h2{
     color: #575755;
     text-align: center;
 }
-p{
+.text{
+    margin: 16px;
+}
+p,label{
     font-family: "Franklin", sans-serif;
     font-weight: 100;
     color: #575755;
-    margin:16px;
 }
 #game-grid{
     width: var(--grid-width);
@@ -222,6 +224,29 @@ body{
     color: #1c1b17;
     text-align: center;
 }
+
+.mistakes-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+.mistakes-label{
+    font-size: clamp(14px, 4vw, 20px);
+    color: #515045;
+}
+.mistake-dot{
+    width: clamp(4px, 4vw, 16px);
+    height: clamp(4px, 4vw, 16px);
+    border-radius: 100px;
+    border: 1px solid #575755;
+    background-color: #575755;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.mistake-dot.empty{
+    background-color: white;
+}
+
 @media (max-width: 480px) {
     .card {
         aspect-ratio: 1 / 1;
