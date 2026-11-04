@@ -2,8 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif !important;
     font-style: normal !important;
+}
+@font-face {
+    font-family: "Karnak";
+    src: url("karnak.ttf") format("ttf");
+    font-weight: 700;
 }
 @font-face {
     font-family: "Franklin";
@@ -18,12 +22,12 @@
 }
 h1{
     font-size: clamp(26px, 6vw, 40px);
-    font-family: "Franklin", sans-serif;
+    font-family: "Karnak", sans-serif;
     text-align: center;
     text-transform: uppercase;
 }
 h2{
-    font-family: "Franklin", sans-serif;
+    font-family: "Karnak", sans-serif;
     font-size: clamp(20px, 4vw, 24px);
     font-weight: 400;
     color: #575755;
@@ -101,7 +105,28 @@ p,label{
     appearance: none;
     -webkit-tap-highlight-color: transparent;
 }
-.game-btn:focus {
+.play-btn {
+    color: white;
+    background-color: black;
+    padding: 12px clamp(5px, 2vw, 16px);
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 100px;
+    font-size: clamp(10px, 3vw, 14px);
+    font-weight: 600;
+    transition: all 1s;
+    width: clamp(40px,100px,120px);
+
+    white-space: nowrap;
+    -webkit-appearance: none;
+    appearance: none;
+    -webkit-tap-highlight-color: transparent;
+}
+.play-btn:hover{
+     color: black;
+     background-color: white;
+     cursor: pointer;
+}
+.game-btn:focus{
     outline: none;
     background: white;
     color: black;
@@ -252,4 +277,33 @@ body{
         aspect-ratio: 1 / 1;
         font-weight: 800;
     }
+}
+
+
+.start-menu{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #B3A7FE;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.8s;
+}
+.start-container{
+    width: clamp(200px, 400px, 400px);
+    background-color: white;
+    aspect-ratio: 5/6;
+    padding: 16px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+.small-logo{
+    width: 40px;
+    height: 40px;
 }

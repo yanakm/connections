@@ -6,6 +6,8 @@ const deselectBtn = document.getElementById("deselect");
 deselectBtn.addEventListener('click',handleDeselect);
 const submitBtn = document.getElementById("submit");
 submitBtn.addEventListener('click',submit);
+const playBtn = document.getElementById("play");
+playBtn.addEventListener("click",handlePlay);
 //Global variables
 var selected = []; //Keeps objects of the currently selected words
 var randWords = []; //Keeps an array of all the words in a random order
@@ -275,8 +277,9 @@ function submit(){
         rowCount--;
         grid.style.gridTemplateRows = `repeat(${rowCount}, 1fr)`;
         div.animate([
-        { transform: "scale(0.8)" },
-        { transform: "scale(1)" }
+        { transform: "scale(1.05)" },
+        { transform: "scale(0.9)" },
+        { transform: "scale(1.0)" }
         ], {
             duration: 800,
             easing: "ease-in-out"
@@ -346,4 +349,12 @@ function switchPlaces(e1,e2){
         duration: 800,
         easing: "ease-in-out"
     });
+}
+
+function handlePlay(){
+    const startMenu = document.getElementById("start-menu");
+    startMenu.style.opacity = "0";
+    setTimeout(()=>{
+        startMenu.style.display = "none";
+    },800)
 }
